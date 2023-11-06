@@ -15,7 +15,10 @@ state_writer = StateWriter()
 correct_guesses = []
 
 while len(correct_guesses) < 50:
-    guess = screen.textinput(title=f"{len(correct_guesses)}/50 States Correct", prompt="What's another state's name?").title()
+    guess = screen.textinput(title=f"{len(correct_guesses)}/50 States Correct",
+                             prompt="What's another state's name?").title()
+    if guess == "Exit":
+        break
     if guess not in correct_guesses and guess in states_list:
         # extract the state's data
         row = data[data["state"] == guess]
@@ -25,4 +28,8 @@ while len(correct_guesses) < 50:
         state_writer.write_state_name(guess, x, y)
         correct_guesses.append(guess)
 
-screen.exitonclick()
+
+# creating csv file that contains the missing states
+missing_states = sorted(list(set(states_list) - set(correct_guesses)))
+df = pandas.DataFrame(missing_states)
+df.to_csv("states_to_learn.csv")
