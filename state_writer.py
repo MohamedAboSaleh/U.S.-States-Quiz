@@ -10,3 +10,4 @@ class StateWriter(Turtle):
     def write_state_name(self, state, xcor, ycor):
         self.goto(xcor, ycor)
         self.write(state)
+
