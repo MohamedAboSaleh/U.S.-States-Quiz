@@ -43,6 +43,11 @@ Here's a preview of what the game looks like:
 ![Screenshot](https://github.com/MohamedAboSaleh/U.S.-States-Quiz/assets/135134225/cafe102d-fa3c-4d9b-b384-183c384a5344)
 
 
+---
+
+## 📜 Credits  
+
+Developed as part of the [Python Bootcamp: 100 Days of Code](https://www.udemy.com/course/100-days-of-code/) by Angela Yu.  
 
 ---
 
